@@ -24,7 +24,7 @@
                 <li class="list-group-item">  {{ product["bulletThree"] }}  </li>
               </ul>
               <div class="card-body text-center">
-                <button class="btn btn-primary btn-lg" style="border-radius:30px"> Sign Up</button>
+                <button v-on:click="showSignup()" class="btn btn-primary btn-lg" style="border-radius:30px"> Sign Up</button>
             </div>
             </div>
           </div>
@@ -32,6 +32,27 @@
 
 
         </div>
+
+         <dialog id="signup-details">
+           <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <button> Close </button>
+</form>
+         
+        </dialog>
       </div>
     
       
@@ -41,14 +62,21 @@
 </template>
 
 <style>
+form {
+  padding: 75px;
+}
 body {
-  background-color: rgb(63, 63, 63);
+  background-color: rgb(54, 54, 54);
 }
 
 h1 {
   padding: 25px;
   color: #fff;
   font-weight: 600;
+}
+
+dialog {
+  border-radius: 3rem;
 }
 
 .card-title {
@@ -105,7 +133,7 @@ h1 {
 export default {
   data: function () {
     return {
-      message: "Sign Up",
+      message: "Create an Account",
       products: [
         {
           name: "Trial",
@@ -138,6 +166,11 @@ export default {
     };
   },
   created: function () {},
-  methods: {},
+  methods: {
+    showSignup: function () {
+      console.log("hello");
+      document.querySelector("#signup-details").showModal();
+    },
+  },
 };
 </script>
