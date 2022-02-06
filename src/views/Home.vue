@@ -1,118 +1,207 @@
 <template>
   <div class="home">
-    <h1>{{ message }}</h1>
-    <div class="container">
-      <div class="row"> 
-          <div v-for="product in products" class="col-lg-4 col-md-12">
-          <div class="card">
+    <main class="signup-grid">
+      <div class="header">
+        <h1> Sign Up</h1>
+      </div>
+      <div class="registration-form">
+        <div class="card">
+          <div class="card-body">
+            <form>
+             <div class="form-group">
+                <label for="exampleInputEmail1">Username</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">First Name</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="First Name">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <label for="exampleInputPassword1"> Last Name</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Last Name">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <div class="form-group">
+                    <label for="exampleInputPassword1"> Address </label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Address">
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="form-group">
+                    <label for="exampleInputPassword1"> State </label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Last Name">
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="form-group">
+                    <label for="exampleInputPassword1"> Country </label>
+                    <input type="dropdown" class="form-control" id="exampleInputPassword1" placeholder="">
+                  </div>
+                </div>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out </label>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <br> <br> 
+              <button class= "btn btn-primary"> Close </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="subscription-options">
+        <div v-for="product in products">
+          <div class="product-box">
+            <h2> {{ product.name }}</h2>
+            <p> <span class="price"> {{ product.price }}</span> /month </p>
+            <p> {{ product.description }} </p>
+            <button class="btn btn-primary"> Select </button>
+          </div>
+        </div>
+      </div>
+
+
+
+<!-- <div class="card">
             <div class="card-body">
               <div class="text-center">
                 <h5 class="card-title">  {{ product["name"] }} </h5>
+                <p> <i class="fas fa-baseball-ball fa-2x"></i>  </p>
                 <div v-show="product.price != 0">
                   <span class="price">
                   ${{ product["price"] }} 
                 </span> /month
                 </div>
-                
-                <br><br> 
                 <p class="card-text">  {{ product["description"] }} </p>
               </div>
               <br>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">  {{ product["bulletOne"] }} </li>
-                <li class="list-group-item">  {{ product["bulletTwo"] }}  </li>
-                <li class="list-group-item">  {{ product["bulletThree"] }}  </li>
-              </ul>
               <div class="card-body text-center">
-                <button v-on:click="showSignup()" class="btn btn-primary btn-lg" style="border-radius:30px"> Sign Up</button>
+                <button v-on:click="showSignup()" class="btn btn-primary" style="border-radius:30px"> Select </button>
             </div>
             </div>
-          </div>
-        </div>
+          </div> -->
+
+    </main>
+    
+    
+          
+          
+          
+          
+          
+          
+          
+          
+          
 
 
-        </div>
+      
+           
 
-         <dialog id="signup-details">
-           <form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-  <button> Close </button>
-</form>
-         
-        </dialog>
-      </div>
+
     
       
     
-    </div>
+    
   </div>
 </template>
 
 <style>
+.signup-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 100px;
+  height: 100vh;
+}
+
+.header {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+
+.registration-form {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+}
+
+.subscription-options {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  color: #fff;
+}
+
+.subscription-options .product-box {
+  border-radius: 3rem;
+  border: 2px solid #fff;
+  width: 75%;
+  padding: 4.5px;
+}
+
 form {
-  padding: 75px;
+  padding: 10px;
+}
+
+form .form-group input {
+  border-radius: 3rem;
 }
 body {
   background-color: rgb(54, 54, 54);
 }
 
 h1 {
-  padding: 25px;
   color: #fff;
   font-weight: 600;
 }
 
-dialog {
-  border-radius: 3rem;
-}
-
 .card-title {
-  font-size: 1.75rem;
+  font-size: 1.2rem;
 }
 .price {
-  font-size: 2.5rem;
+  font-size: 1.75rem;
+}
+
+.subscription-options .card {
+  font-size: 11px;
 }
 
 * {
   font-family: "Nunito";
 }
-.row {
-  display: flex;
-}
-
-.flex-container {
-  display: flex;
-  flex-direction: column;
-}
 
 .btn {
-  width: 100%;
+  width: 30%;
 }
 
 .card {
   border-radius: 4rem;
   border: none;
-  padding: 10px 50px;
 }
 
 .card-text {
-  font-size: 1.2rem;
 }
 
-.card:hover {
+.subscription-options .card:hover {
   transform: scale(1.02, 1.02);
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.75) !important;
   will-change: transform;
