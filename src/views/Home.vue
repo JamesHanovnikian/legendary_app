@@ -377,7 +377,8 @@
         <div v-for="product in products">
           <div class="product-box">
             <h3 class="title"> {{ product.name }}</h3>
-            <hr>
+            <div class="underline">
+            </div>
              <i class="fas fa-baseball-ball fa-2x "></i>
             <p> <span class="price"> $ {{ product.price }}</span> /month </p>
             <p> {{ product.description }} </p>
@@ -458,7 +459,8 @@
 }
 
 .registration-form .card {
-  border: 1.5px solid rgb(146, 146, 146, 0.8);
+  background-color: #fff;
+  border: solid 3px #474544;
 }
 
 .registration-form .form-control {
@@ -468,6 +470,10 @@
 
 .registration-form label {
   font-size: 12px;
+}
+
+label {
+  text-transform: uppercase;
 }
 
 .subscription-options {
@@ -484,7 +490,7 @@
 
 .subscription-options .product-box {
   border-radius: 3rem;
-  border: 1.5px solid rgb(146, 146, 146, 0.8);
+  border: solid 2px #474544;
   width: 65%;
   padding: 4.5px;
   margin: 15px;
@@ -505,11 +511,16 @@ form .form-group input {
   border-radius: 3rem;
 }
 body {
-  background-color: rgb(54, 54, 54);
+  background-color: rgb(241, 241, 241);
+}
+
+.underline {
+  border-bottom: solid 2px #474544;
+  margin-bottom: 3px;
 }
 
 h1 {
-  color: #fff;
+  color: #333;
   font-weight: 600;
 }
 
@@ -526,6 +537,48 @@ h3 {
 
 .subscription-options .card {
   font-size: 11px;
+}
+
+input {
+  line-height: normal;
+}
+
+textarea {
+  overflow: auto;
+}
+
+input[type="text"],
+[type="email"],
+[type="tel"],
+[type="password"],
+select,
+textarea {
+  background: none;
+  border: none;
+  border-bottom: solid 2px #474544;
+  color: #474544;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0em 0 1.875em 0;
+  padding: 0 0 0.875em 0;
+  text-transform: uppercase;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+form {
+  padding: 10.5px;
+  margin: 15px 0;
 }
 
 * {
