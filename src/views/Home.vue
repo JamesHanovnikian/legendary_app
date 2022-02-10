@@ -16,7 +16,6 @@
               <div class="form-group input-group-sm ">
                 <label for="exampleInputEmail1">Email address</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
               </div>
               <div class="form-group input-group-sm ">
                 <label class="justify-content-start" for="exampleInputPassword1">Password</label>
@@ -444,15 +443,15 @@
 }
 
 .header {
-  grid-column-start: 1;
-  grid-column-end: 4;
+  grid-column-start: 3;
+  grid-column-end: 5;
   grid-row-start: 1;
   grid-row-end: 1;
 }
 
 .registration-form {
-  grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column-start: 4;
+  grid-column-end: 4;
   grid-row-start: 2;
   grid-row-end: 4;
   width: 650px;
@@ -473,8 +472,8 @@
 
 .subscription-options {
   width: 400px;
-  grid-column-start: 3;
-  grid-column-end: 5;
+  grid-column-start: 1;
+  grid-column-end: 3;
   grid-row-start: 1;
   color: #fff;
 }
